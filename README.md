@@ -4,7 +4,7 @@ Este é um projeto simples de uma aplicação web que converte valores em reais 
 
 ## 🌐 Acesse o site
 
-Você pode acessar a versão hospedada da aplicação [clicando aqui](https://github.com/saramargarido/convert).
+Você pode acessar a versão hospedada da aplicação [clicando aqui](https://saramargarido.github.io/convert/).
 
 ## Funcionalidades
 
