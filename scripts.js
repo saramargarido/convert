@@ -1,8 +1,19 @@
-// Cotação de moedas do dia
-const USD = 5.61
-const EUR = 6.23
-const GBP = 7.39
+async function getValuesFromApi() {
+    const response = await fetch(`https://economia.awesomeapi.com.br/json/last/EUR-BRL,USD-BRL,GBP-BRL`)
+    const data = await response.json()
+    return data
+}
 
+const currencyValues = await getValuesFromApi()
+
+console.log(currencyValues)
+
+// Cotação de moedas do dia
+const USD = currencyValues.USDBRL.ask ?? 5.63
+const EUR = currencyValues.EURBRL.ask ?? 6.17
+const GBP = currencyValues.GBPBRL.ask ?? 7.37
+
+console.log(USD)
 // obtendo os elementos do formulário
 const form = document.querySelector("form")
 const amount = document.getElementById("amount")
@@ -10,6 +21,7 @@ const currency = document.getElementById("currency")
 const footer = document.querySelector("main footer")
 const description = document.getElementById("description")
 const result = document.getElementById("result")
+
 
 // Manipulando o input amount para receber somente números
 amount.addEventListener("input", () => {
